@@ -5,33 +5,29 @@ import 'package:meta/meta.dart';
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit(this.context) : super(HomeInitial());
+  HomeCubit() : super(HomeInitial());
 
-  BuildContext context;
   int counter = 0;
-  bool flag = true;
+  bool flag=true;
 
-  increment() {
-    if (flag) {
+  increment(){
+
+    if (flag==true){
       counter++;
-      if (counter == 10) {
-        flag = false;
+      if(counter==10){
+        flag=false;
       }
-    } else {
+    }
+    else{
       counter--;
-      if (counter == 0) {
-        flag = true;
+      if(counter==0){
+        flag=true;
       }
     }
     emit(HomeInitial());
+    print("counter >>>>$counter");
   }
 
 
-  decrement() {
-    if (counter > 0) {
-      counter--;
-    }
 
-    emit(HomeInitial());
-  }
 }
