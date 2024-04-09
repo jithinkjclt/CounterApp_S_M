@@ -41,7 +41,25 @@ class homeScreen extends StatelessWidget {
                     width: 25,
                   )
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 100,
+              ),
+              Text(
+                cubit.change.toString(),
+                style: const TextStyle(fontSize: 25, color: Colors.amber),
+              ),
+              const SizedBox(
+                height: 100,
+              ),
+              IconButton(
+                  onPressed: () {
+                    cubit.chanager();
+                  },
+                  icon: const Icon(
+                    Icons.remove_red_eye,
+                    size: 40,
+                  ))
             ],
           );
         },
